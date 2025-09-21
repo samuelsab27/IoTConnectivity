@@ -52,31 +52,52 @@
   - Server IoT: `192.168.25.3`
   - MCU y sensores: DHCP vía Gateway.
 
-### 3.2 Lógica en MCU (JavaScript)
+### 3.2 Pruebas y Resultados
 
-```javascript
-function setup() {
-  pinMode(A0, INPUT);   // Humedad
-  pinMode(A1, INPUT);   // Agua/Lluvia
-  pinMode(2, INPUT);    // Vibración/Motion
-  pinMode(3, OUTPUT);   // Alarma
-}
+- Se verificó **conectividad** mediante `ping` desde **Server** a **Home Gateway** y **MCU**.
+- Se ajustaron los valores de **sensores** (propiedad `level`) para simular condiciones críticas.
+- La **alarma se activa** cuando uno o más sensores superan los umbrales configurados.
 
-function loop() {
-  var humidity = analogRead(A0);
-  var water    = analogRead(A1);
-  var motion   = digitalRead(2);
+**Desafíos:**
+- Mapeo correcto de sensores y actuadores a pines analógicos/digitales.
+- Configuración del servidor IoT/MQTT en Packet Tracer.
 
-  var humHigh   = 50;   // umbral humedad
-  var waterHigh = 50;   // umbral agua
+---
 
-  var riesgo = (humidity > humHigh) || (water > waterHigh) || (motion == 1);
 
-  if (riesgo) {
-    digitalWrite(3, 1);  // Enciende alarma
-  } else {
-    digitalWrite(3, 0);  // Apaga alarma
-  }
+## 4️⃣ Colaboración en el Equipo
 
-  delay(500);
-}
+**Roles asignados:**
+- **Integrante 1:** diseño de conectividad (topología y protocolos).
+- **Integrante 2:** validación en Cisco Packet Tracer (configuración IP, sensores, actuadores).
+
+**Reuniones:** se realizaron encuentros virtuales para compartir avances y resolver problemas de simulación.  
+**Entregables:** Wiki en GitHub + Video de presentación (5 minutos).
+
+---
+
+## 5️⃣ Referencias y Recursos
+
+- [Documentación Cisco Packet Tracer IoT](https://www.netacad.com/courses/packet-tracer)
+- Protocolos IoT: **MQTT**, **Wi-Fi 802.11**
+- Ejemplos de proyectos IoT educativos (NetAcad)
+
+---
+
+## 6️⃣ Video de Presentación
+
+🔗 **URL del video:** *(pendiente de subir)*  
+
+El video muestra:
+- Los componentes del diseño.
+- La lógica en MCU.
+- Las pruebas de conectividad y activación de la alarma.
+
+---
+
+## 7️⃣ Conclusiones
+
+- Se diseñó y validó un **prototipo IoT** de alerta temprana en Packet Tracer.
+- Se demostró la **comunicación MCU ↔ Gateway ↔ Server IoT**.
+- Se integró lógica para **activar una alarma local** ante condiciones críticas.
+- El diseño es escalable para integrar **MQTT en la nube** en fases posteriores.
