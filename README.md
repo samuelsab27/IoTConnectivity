@@ -68,8 +68,8 @@
 ## 4️⃣ Colaboración en el Equipo
 
 **Roles asignados:**
-- **Integrante 1:** diseño de conectividad (topología y protocolos).
-- **Integrante 2:** validación en Cisco Packet Tracer (configuración IP, sensores, actuadores).
+- **Samuel Sabogal:** diseño de conectividad (topología y protocolos),validación en Cisco Packet Tracer (configuración IP, sensores, actuadores).
+- **Julian Andres Vazques:** Implementacion MQTT en el diseño de red
 
 **Reuniones:** se realizaron encuentros virtuales para compartir avances y resolver problemas de simulación.  
 **Entregables:** Wiki en GitHub + Video de presentación (5 minutos).
